@@ -1,0 +1,89 @@
+import to.wetransform.hale.codegen.generator.CLI
+
+buildscript {
+  repositories {
+    maven {
+      url 'http://download.osgeo.org/webdav/geotools/'
+    }
+
+    jcenter()
+
+    // HALE artifacts
+    maven {
+      url 'https://artifactory.wetransform.to/artifactory/libs-release'
+    }
+    // HALE artifactory
+    maven {
+      url 'http://artifactory.esdi-humboldt.eu/artifactory/libs-release/'
+    }
+
+    mavenLocal()
+  }
+
+  dependencies {
+    classpath 'org.standardout:gradle-eclipseconfig:1.0.0'
+    classpath 'to.wetransform.hale-codegen:generator:1.0.0-SNAPSHOT'
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.standardout.eclipseconfig'
+
+sourceCompatibility = '1.8'
+
+repositories {
+  maven {
+    url 'http://download.osgeo.org/webdav/geotools/'
+  }
+
+  jcenter()
+
+  // HALE artifacts
+  maven {
+    url 'https://artifactory.wetransform.to/artifactory/libs-release'
+  }
+  // HALE artifactory
+  maven {
+    url 'http://artifactory.esdi-humboldt.eu/artifactory/libs-release/'
+  }
+
+  mavenLocal()
+}
+
+configurations.all {
+  // ensure SNAPSHOTs are updated every time if needed
+  resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+}
+
+project.ext {
+  haleVersion = '3.0.0'
+}
+
+dependencies {
+  compile 'to.wetransform.hale-codegen:model:1.0.0-SNAPSHOT'
+  // for GeometryProperty
+  compile "eu.esdihumboldt.hale:eu.esdihumboldt.hale.common.schema:$haleVersion"
+
+  testCompile 'junit:junit:4.12'
+  testCompile 'to.wetransform.hale-codegen:instances:1.0.0-SNAPSHOT'
+  testCompile "eu.esdihumboldt.hale:eu.esdihumboldt.hale.io.xsd:$haleVersion"
+  testCompile "eu.esdihumboldt.hale:eu.esdihumboldt.hale.io.xml:$haleVersion"
+  testCompile "eu.esdihumboldt.hale:eu.esdihumboldt.hale.io.gml:$haleVersion"
+}
+
+task regenerateSources << {
+  File targetDir = project.file('src/main/java')
+  targetDir.deleteDir();
+  targetDir.mkdirs();
+
+  URI schemaLocation = project.file('src/test/resources/NAS_6.0.1/schema/aaa.xsd').toURI()
+
+  CLI.run(schemaLocation, targetDir)
+}
+
+tasks.classes.dependsOn('regenerateSources')
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '3.0'
+}
+
