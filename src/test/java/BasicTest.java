@@ -1,4 +1,7 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import java.net.URI;
@@ -8,6 +11,7 @@ import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 
 import org.eclipse.equinox.nonosgi.registry.RegistryFactoryHelper;
 import org.junit.BeforeClass;
@@ -29,8 +33,8 @@ import eu.esdihumboldt.hale.common.core.io.supplier.FileIOSupplier;
 import eu.esdihumboldt.hale.common.instance.model.Instance;
 import eu.esdihumboldt.hale.common.instance.model.InstanceCollection;
 import eu.esdihumboldt.hale.common.instance.model.ResourceIterator;
-import eu.esdihumboldt.hale.common.schema.model.SchemaSpace;
 import eu.esdihumboldt.hale.common.schema.model.impl.DefaultSchemaSpace;
+import eu.esdihumboldt.hale.io.gml.reader.internal.GmlInstanceReader;
 import eu.esdihumboldt.hale.io.gml.writer.GmlInstanceWriter;
 import eu.esdihumboldt.hale.io.xsd.reader.XmlSchemaReader;
 import net.opengis.www.gml._3_2.AreaType;
@@ -39,7 +43,7 @@ import net.opengis.www.gml._3_2.CodeWithAuthorityType;
 import to.wetransform.hale.codegen.instances.InstanceConverter;
 import to.wetransform.hale.codegen.model.ModelObject;
 
-public class WriteTest {
+public class BasicTest {
 
   @BeforeClass
   public static void init() {
@@ -47,7 +51,7 @@ public class WriteTest {
   }
 
   @Test
-  public void testSimpleWrite() throws Exception {
+  public void testSimpleWriteRead() throws Exception {
     // create object
     AX_FlurstueckType flurstueck = new AX_FlurstueckType();
 
@@ -143,9 +147,49 @@ public class WriteTest {
     IOReport writeReport = writer.execute(null);
     assertTrue(writeReport.isSuccess());
 
-    //TODO validate when a valid instance is built
+    //TODO validate when a valid instance is built?
 
     System.out.println(tmpFile.toAbsolutePath().toString());
+
+    // read instance collection
+    GmlInstanceReader gmlReader = new GmlInstanceReader();
+    gmlReader.setSourceSchema(ss);
+    gmlReader.setSource(new FileIOSupplier(tmpFile.toFile()));
+
+    IOReport readReport = gmlReader.execute(null);
+    assertTrue(readReport.isSuccess());
+
+    InstanceCollection readInstances = gmlReader.getInstances();
+
+    // convert to model objects
+    Iterable<? extends ModelObject> readObjects = converter.convert(readInstances, new Model());
+    Iterator<? extends ModelObject> it = readObjects.iterator();
+    assertTrue(it.hasNext());
+    Object readObject = it.next();
+
+    assertTrue(readObject instanceof AX_FlurstueckType);
+    AX_FlurstueckType fs2 = (AX_FlurstueckType) readObject;
+
+    // assertions on read object
+    assertEquals("099998___00001______", fs2.getFlurstueckskennzeichen());
+
+    assertNotNull(fs2.getModellart());
+    assertEquals(1, fs2.getModellart().size());
+    AA_ModellartPropertyType check_modellart = fs2.getModellart().get(0);
+    AA_ModellartType check_modellart_ = check_modellart.getAA_Modellart();
+    Choice_1 check_modellart_choice = check_modellart_.getChoice_1();
+    assertNull(check_modellart_choice.getSonstigesModell());
+    String check_advmodell = check_modellart_choice.getAdvStandardModell();
+    assertNotNull(check_advmodell);
+    assertEquals("DLKM", check_advmodell);
+
+    // ...
+
+    // not any more objects expected
+    assertFalse(it.hasNext());
+
+    // delete temporarily created file
+    Files.delete(tmpFile);
   }
 
 }
