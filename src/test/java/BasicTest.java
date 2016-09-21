@@ -192,4 +192,41 @@ public class BasicTest {
     Files.delete(tmpFile);
   }
 
+  @Test
+  public void testSampleRead() throws Exception {
+    // load XML Schema
+    XmlSchemaReader reader = new XmlSchemaReader();
+    reader.setSource(new DefaultInputSupplier(getClass().getClassLoader().getResource("NAS_6.0.1/schema/aaa.xsd").toURI()));
+    reader.setOnlyElementsMappable(true);
+    IOReport report = reader.execute(null);
+    if (!report.isSuccess()) {
+      throw new IllegalStateException("Loading XML schema failed");
+    }
+
+    // read instance collection
+    GmlInstanceReader gmlReader = new GmlInstanceReader();
+    DefaultSchemaSpace ss = new DefaultSchemaSpace();
+    ss.addSchema(reader.getSchema());
+    gmlReader.setSourceSchema(ss);
+    gmlReader.setSource(new DefaultInputSupplier(getClass().getClassLoader().getResource("getfeature-response.xml").toURI()));
+
+    IOReport readReport = gmlReader.execute(null);
+    assertTrue(readReport.isSuccess());
+
+    InstanceCollection readInstances = gmlReader.getInstances();
+
+    // convert to model objects
+    InstanceConverter converter = new InstanceConverter();
+    Iterable<? extends ModelObject> readObjects = converter.convert(readInstances, new Model());
+    Iterator<? extends ModelObject> it = readObjects.iterator();
+    int count = 0;
+    while (it.hasNext()) {
+      Object readObject = it.next();
+      assertTrue(readObject instanceof ModelObject);
+      count++;
+    }
+
+    assertEquals(463, count);
+  }
+
 }
