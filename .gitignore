@@ -7,3 +7,12 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
+
+/.gradle/
+/build/
+/bin/
+/.settings/
+/.classpath
+/.project
+
+/src/main/java/**/*.java

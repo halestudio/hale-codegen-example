@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:GetFeature service="WFS" version="2.0.0"
+                resolve="local" resolveDepth="*"
+                xmlns="http://www.opengis.net/wfs/2.0"
+                xmlns:wfs="http://www.opengis.net/wfs/2.0"
+                xmlns:gml="http://www.opengis.net/gml/3.2"
+                xmlns:fes="http://www.opengis.net/fes/2.0"
+                xmlns:adv="http://www.adv-online.de/namespaces/adv/gid/6.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.opengis.net/wfs/2.0 http://schemas.opengis.net/wfs/2.0/wfs.xsd 
+                    http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd"> 
+                    
+    <wfs:Query typeNames="adv:AX_Flurstueck" srsName="urn:ogc:def:crs:EPSG::31468" handle="Q01">
+     
+        <fes:Filter>
+        
+            <fes:PropertyIsEqualTo>
+                <fes:ValueReference>adv:flurstueckskennzeichen</fes:ValueReference>
+                <fes:Literal>099998___00001______</fes:Literal>
+            </fes:PropertyIsEqualTo>
+            
+        </fes:Filter>
+        
+    </wfs:Query>        
+
+</wfs:GetFeature>
