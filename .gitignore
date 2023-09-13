@@ -15,4 +15,6 @@ buildNumber.properties
 /.classpath
 /.project
 
+/.idea/
+
 /src/main/java/**/*.java
