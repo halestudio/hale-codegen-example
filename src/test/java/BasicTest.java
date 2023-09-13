@@ -1,37 +1,4 @@
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-
-import java.net.URI;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.sql.Timestamp;
-import java.time.Instant;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Iterator;
-
-import org.eclipse.equinox.nonosgi.registry.RegistryFactoryHelper;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import com.vividsolutions.jts.geom.Coordinate;
-import com.vividsolutions.jts.geom.Geometry;
-import com.vividsolutions.jts.geom.GeometryFactory;
-import com.vividsolutions.jts.geom.LinearRing;
-import com.vividsolutions.jts.geom.Polygon;
-
-import de.adv_online.www.namespaces.adv.gid._6_0.AA_LebenszeitintervallPropertyType;
-import de.adv_online.www.namespaces.adv.gid._6_0.AA_LebenszeitintervallType;
-import de.adv_online.www.namespaces.adv.gid._6_0.AA_ModellartPropertyType;
-import de.adv_online.www.namespaces.adv.gid._6_0.AA_ModellartType;
-import de.adv_online.www.namespaces.adv.gid._6_0.AX_FlurstueckType;
-import de.adv_online.www.namespaces.adv.gid._6_0.AX_FlurstuecksnummerPropertyType;
-import de.adv_online.www.namespaces.adv.gid._6_0.AX_FlurstuecksnummerType;
-import de.adv_online.www.namespaces.adv.gid._6_0.AX_Gemarkung_SchluesselPropertyType;
-import de.adv_online.www.namespaces.adv.gid._6_0.AX_Gemarkung_SchluesselType;
+import de.adv_online.www.namespaces.adv.gid._6_0.*;
 import de.adv_online.www.namespaces.adv.gid._6_0.aa_modellarttype.Choice_1;
 import eu.esdihumboldt.hale.common.core.io.report.IOReport;
 import eu.esdihumboldt.hale.common.core.io.supplier.DefaultInputSupplier;
@@ -47,14 +14,25 @@ import eu.esdihumboldt.hale.common.schema.model.impl.DefaultSchemaSpace;
 import eu.esdihumboldt.hale.io.gml.reader.internal.GmlInstanceReader;
 import eu.esdihumboldt.hale.io.gml.writer.GmlInstanceWriter;
 import eu.esdihumboldt.hale.io.xsd.reader.XmlSchemaReader;
-import net.opengis.www.gml._3_2.AreaType;
-import net.opengis.www.gml._3_2.CodeType;
-import net.opengis.www.gml._3_2.CodeWithAuthorityType;
-import net.opengis.www.gml._3_2.GeometryPropertyType;
-import net.opengis.www.gml._3_2.SurfaceType;
+import net.opengis.www.gml._3_2.*;
 import net.opengis.www.gml._3_2.abstractgeometry.Choice;
+import org.eclipse.equinox.nonosgi.registry.RegistryFactoryHelper;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.locationtech.jts.geom.*;
 import to.wetransform.hale.codegen.instances.InstanceConverter;
 import to.wetransform.hale.codegen.model.ModelObject;
+
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.sql.Timestamp;
+import java.time.Instant;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
+
+import static org.junit.Assert.*;
 
 public class BasicTest {
 

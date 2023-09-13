@@ -3,26 +3,20 @@ import to.wetransform.hale.codegen.generator.CLI
 buildscript {
   repositories {
     maven {
-      url 'http://download.osgeo.org/webdav/geotools/'
+      url 'https://repo.osgeo.org/repository/release/'
     }
 
-    jcenter()
+    mavenCentral()
 
     // HALE artifacts
     maven {
-      url 'https://artifactory.wetransform.to/artifactory/libs-release'
+      url 'https://artifactory.wetransform.to/artifactory/local'
     }
-    // HALE artifactory
-    maven {
-      url 'http://artifactory.esdi-humboldt.eu/artifactory/libs-release/'
-    }
-
-    mavenLocal()
   }
 
   dependencies {
     classpath 'org.standardout:gradle-eclipseconfig:1.0.0'
-    classpath 'to.wetransform.hale-codegen:generator:1.0.0-SNAPSHOT'
+    classpath 'to.wetransform.hale-codegen:generator:0.3.0-SNAPSHOT'
   }
 }
 
@@ -33,21 +27,15 @@ sourceCompatibility = '1.8'
 
 repositories {
   maven {
-    url 'http://download.osgeo.org/webdav/geotools/'
+    url 'https://repo.osgeo.org/repository/release/'
   }
 
-  jcenter()
+  mavenCentral()
 
   // HALE artifacts
   maven {
-    url 'https://artifactory.wetransform.to/artifactory/libs-release'
+    url 'https://artifactory.wetransform.to/artifactory/local'
   }
-  // HALE artifactory
-  maven {
-    url 'http://artifactory.esdi-humboldt.eu/artifactory/libs-release/'
-  }
-
-  mavenLocal()
 }
 
 configurations.all {
@@ -56,22 +44,23 @@ configurations.all {
 }
 
 project.ext {
-  haleVersion = '3.0.0'
+  haleVersion = '5.0.1'
 }
 
 dependencies {
-  compile 'to.wetransform.hale-codegen:model:1.0.0-SNAPSHOT'
+  implementation 'eu.esdihumboldt.unpuzzled:org.eclipse.equinox.nonosgi.registry:1.0.0'
+  implementation 'to.wetransform.hale-codegen:model:0.3.0-SNAPSHOT'
   // for GeometryProperty
-  compile "eu.esdihumboldt.hale:eu.esdihumboldt.hale.common.schema:$haleVersion"
+  implementation "eu.esdihumboldt.hale:eu.esdihumboldt.hale.common.schema:$haleVersion"
 
-  testCompile 'junit:junit:4.12'
-  testCompile 'to.wetransform.hale-codegen:instances:1.0.0-SNAPSHOT'
-  testCompile "eu.esdihumboldt.hale:eu.esdihumboldt.hale.io.xsd:$haleVersion"
-  testCompile "eu.esdihumboldt.hale:eu.esdihumboldt.hale.io.xml:$haleVersion"
-  testCompile "eu.esdihumboldt.hale:eu.esdihumboldt.hale.io.gml:$haleVersion"
+  testImplementation 'junit:junit:4.12'
+  testImplementation 'to.wetransform.hale-codegen:instances:0.3.0-SNAPSHOT'
+  testImplementation "eu.esdihumboldt.hale:eu.esdihumboldt.hale.io.xsd:$haleVersion"
+  testImplementation "eu.esdihumboldt.hale:eu.esdihumboldt.hale.io.xml:$haleVersion"
+  testImplementation "eu.esdihumboldt.hale:eu.esdihumboldt.hale.io.gml:$haleVersion"
 }
 
-task regenerateSources << {
+task('regenerateSources').doFirst {
   File targetDir = project.file('src/main/java')
   targetDir.deleteDir();
   targetDir.mkdirs();
@@ -81,9 +70,10 @@ task regenerateSources << {
   CLI.run(schemaLocation, targetDir)
 }
 
-tasks.classes.dependsOn('regenerateSources')
+tasks.compileJava.dependsOn('regenerateSources')
 
-task wrapper(type: Wrapper) {
-  gradleVersion = '3.0'
+tasks.wrapper {
+  distributionType = Wrapper.DistributionType.ALL
+  gradleVersion = '8.3'
 }
 
