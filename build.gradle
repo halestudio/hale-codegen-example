@@ -15,7 +15,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'org.standardout:gradle-eclipseconfig:1.0.0'
+    classpath 'org.standardout:gradle-eclipseconfig:1.1.0'
     classpath 'to.wetransform.hale-codegen:generator:0.3.0-SNAPSHOT'
   }
 
@@ -50,6 +50,10 @@ configurations.all {
 
 project.ext {
   haleVersion = '5.0.1'
+}
+
+eclipseconfig {
+  codeTemplates = rootProject.file('codetemplates.xml')
 }
 
 dependencies {
