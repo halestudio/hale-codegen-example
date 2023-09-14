@@ -1,5 +1,5 @@
-import de.adv_online.www.namespaces.adv.gid._6_0.*;
-import de.adv_online.www.namespaces.adv.gid._6_0.aa_modellarttype.Choice_1;
+import de.adv_online.www.namespaces.adv.gid._7_1.*;
+import de.adv_online.www.namespaces.adv.gid._7_1.aa_modellarttype.Choice_1;
 import eu.esdihumboldt.hale.common.core.io.report.IOReport;
 import eu.esdihumboldt.hale.common.core.io.supplier.DefaultInputSupplier;
 import eu.esdihumboldt.hale.common.core.io.supplier.FileIOSupplier;
@@ -66,10 +66,6 @@ public class BasicTest {
     ma1_.setChoice_1(ma1_c );
     ma1.setAA_Modellart(ma1_);
     flurstueck.getModellart().add(ma1);
-
-    CodeType anlass = new CodeType();
-    anlass.setValue("000000");
-    flurstueck.getAnlass().add(anlass);
 
     GeometryPropertyType position = new GeometryPropertyType();
     Choice geom = new Choice();
@@ -139,7 +135,7 @@ public class BasicTest {
 
     // load XML Schema
     XmlSchemaReader reader = new XmlSchemaReader();
-    reader.setSource(new DefaultInputSupplier(getClass().getClassLoader().getResource("NAS_6.0.1/schema/aaa.xsd").toURI()));
+    reader.setSource(new DefaultInputSupplier(URI.create("https://repository.gdi-de.org/schemas/adv/nas/7.1/aaa.xsd")));
     reader.setOnlyElementsMappable(true);
     IOReport report = reader.execute(null);
     if (!report.isSuccess()) {
@@ -234,7 +230,7 @@ public class BasicTest {
   public void testSampleRead() throws Exception {
     // load XML Schema
     XmlSchemaReader reader = new XmlSchemaReader();
-    reader.setSource(new DefaultInputSupplier(getClass().getClassLoader().getResource("NAS_6.0.1/schema/aaa.xsd").toURI()));
+    reader.setSource(new DefaultInputSupplier(URI.create("https://repository.gdi-de.org/schemas/adv/nas/7.1/aaa.xsd")));
     reader.setOnlyElementsMappable(true);
     IOReport report = reader.execute(null);
     if (!report.isSuccess()) {
@@ -246,7 +242,7 @@ public class BasicTest {
     DefaultSchemaSpace ss = new DefaultSchemaSpace();
     ss.addSchema(reader.getSchema());
     gmlReader.setSourceSchema(ss);
-    gmlReader.setSource(new DefaultInputSupplier(getClass().getClassLoader().getResource("getfeature-response.xml").toURI()));
+    gmlReader.setSource(new DefaultInputSupplier(getClass().getClassLoader().getResource("getfeature-response_aaa71.pretty.xml").toURI()));
 
     IOReport readReport = gmlReader.execute(null);
     assertTrue(readReport.isSuccess());
@@ -258,13 +254,24 @@ public class BasicTest {
     Iterable<? extends ModelObject> readObjects = converter.convert(readInstances, new Model());
     Iterator<? extends ModelObject> it = readObjects.iterator();
     int count = 0;
+    int countBuilding = 0;
+    int countParcel = 0;
     while (it.hasNext()) {
       Object readObject = it.next();
       assertTrue(readObject instanceof ModelObject);
       count++;
+
+      if (readObject instanceof AX_FlurstueckType) {
+        countParcel++;
+      }
+      if (readObject instanceof AX_GebaeudeType) {
+        countBuilding++;
+      }
     }
 
-    assertEquals(463, count);
+    assertEquals(18, count);
+    assertEquals(1, countParcel);
+    assertEquals(1, countBuilding);
   }
 
 }
