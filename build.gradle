@@ -18,6 +18,11 @@ buildscript {
     classpath 'org.standardout:gradle-eclipseconfig:1.0.0'
     classpath 'to.wetransform.hale-codegen:generator:0.3.0-SNAPSHOT'
   }
+
+  configurations.all {
+    // ensure SNAPSHOTs are updated every time if needed
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+  }
 }
 
 apply plugin: 'java'
@@ -65,7 +70,7 @@ task('regenerateSources').doFirst {
   targetDir.deleteDir();
   targetDir.mkdirs();
 
-  URI schemaLocation = project.file('src/test/resources/NAS_6.0.1/schema/aaa.xsd').toURI()
+  URI schemaLocation = URI.create('https://repository.gdi-de.org/schemas/adv/nas/7.1/aaa.xsd')
 
   CLI.run(schemaLocation, targetDir)
 }

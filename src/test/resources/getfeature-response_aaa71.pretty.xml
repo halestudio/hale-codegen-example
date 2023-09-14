@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Auszug aus den ALKIS 7.1.2 Testdaten LDBV Bayern https://www.ldbv.bayern.de/service/testdaten.html --> 
+<wfs:FeatureCollection xmlns="http://www.adv-online.de/namespaces/adv/gid/7.1" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:wfs="http://www.opengis.net/wfs/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" timeStamp="2023-09-14T13:05:49.827+02:00" numberReturned="1" numberMatched="unknown" >
+  <wfs:boundedBy>
+    <gml:Envelope srsName="urn:ogc:def:crs:EPSG::25832" srsDimension="2">
+      <gml:lowerCorner>565671.62 5495301.52</gml:lowerCorner>
+      <gml:upperCorner>565751.68 5495362.23</gml:upperCorner>
+    </gml:Envelope>
+  </wfs:boundedBy>
+  <wfs:member>
+    <AX_Flurstueck gml:id="DEBYvAAAAAAAAaSO">
+      <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAaSO</gml:identifier>
+      <lebenszeitintervall>
+        <AA_Lebenszeitintervall>
+          <beginnt>2023-09-14T08:04:35Z</beginnt>
+        </AA_Lebenszeitintervall>
+      </lebenszeitintervall>
+      <modellart>
+        <AA_Modellart>
+          <advStandardModell>DLKM</advStandardModell>
+        </AA_Modellart>
+      </modellart>
+      <inversZu_dientZurDarstellungVon_AP_PTO xlink:href="urn:adv:oid:DEBYvAAAAAAAAbK4"/>
+      <position>
+        <gml:Polygon gml:id="o11001.id.16453.position.Geom_0" srsName="urn:ogc:def:crs:EPSG::25832" srsDimension="2">
+          <gml:exterior>
+            <gml:LinearRing>
+              <gml:posList>565671.62 5495353.12 565673.75 5495343.91 565672.60 5495314.34 565672.30 5495314.35 565672.53 5495308.33 565672.77 5495302.20 565672.76 5495301.52 565712.51 5495305.85 565751.68 5495310.12 565749.40 5495325.65 565744.05 5495362.23 565712.36 5495359.58 565693.30 5495359.45 565671.62 5495353.12</gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+      </position>
+      <gemarkung>
+        <AX_Gemarkung_Schluessel>
+          <land>09</land>
+          <gemarkungsnummer>9995</gemarkungsnummer>
+        </AX_Gemarkung_Schluessel>
+      </gemarkung>
+      <flurstuecksnummer>
+        <AX_Flurstuecksnummer>
+          <zaehler>28</zaehler>
+        </AX_Flurstuecksnummer>
+      </flurstuecksnummer>
+      <flurstueckskennzeichen>099995___00028______</flurstueckskennzeichen>
+      <amtlicheFlaeche uom="m2">4035.0</amtlicheFlaeche>
+      <zeitpunktDerEntstehung>1970-01-01</zeitpunktDerEntstehung>
+      <gemeindezugehoerigkeit>
+        <AX_Gemeindekennzeichen>
+          <land>09</land>
+          <regierungsbezirk>9</regierungsbezirk>
+          <kreis>95</kreis>
+          <gemeinde>995</gemeinde>
+        </AX_Gemeindekennzeichen>
+      </gemeindezugehoerigkeit>
+      <istGebucht xlink:href="urn:adv:oid:DEBYvAAAAAAAAYxt"/>
+      <weistAuf xlink:href="urn:adv:oid:DEBYvAAAAAAAAZks"/>
+    </AX_Flurstueck>
+  </wfs:member>
+  <wfs:additionalObjects>
+    <wfs:SimpleFeatureCollection>
+      <wfs:boundedBy>
+        <gml:Envelope srsName="urn:ogc:def:crs:EPSG::25832" srsDimension="2">
+          <gml:lowerCorner>565693.30 5495329.34</gml:lowerCorner>
+          <gml:upperCorner>565723.65 5495359.58</gml:upperCorner>
+        </gml:Envelope>
+      </wfs:boundedBy>
+      <wfs:member>
+        <AP_PTO gml:id="DEBYvAAAAAAAAbK4">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAbK4</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DKKM1000</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <inversZu_dientZurDarstellungVon_AP_PTO xlink:href="urn:adv:oid:DEBYvAAAAAAAAbK4"/>
+          <position>
+            <gml:Point gml:id="o02341.id.7887.position.Geom_0" srsName="urn:ogc:def:crs:EPSG::25832" srsDimension="2">
+              <gml:pos>565723.65 5495329.34</gml:pos>
+            </gml:Point>
+          </position>
+          <schriftinhalt>28</schriftinhalt>
+          <fontSperrung>0.0</fontSperrung>
+          <skalierung>1.0</skalierung>
+          <horizontaleAusrichtung>zentrisch</horizontaleAusrichtung>
+          <vertikaleAusrichtung>Mitte</vertikaleAusrichtung>
+          <signaturnummer>4111</signaturnummer>
+          <art>ZAE_NEN</art>
+          <dientZurDarstellungVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAaSO"/>
+          <drehwinkel uom="rad">6.243</drehwinkel>
+        </AP_PTO>
+      </wfs:member>
+      <wfs:member>
+        <AX_Buchungsstelle gml:id="DEBYvAAAAAAAAYxt">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAYxt</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <buchungsart>1100</buchungsart>
+          <laufendeNummer>1</laufendeNummer>
+          <zeitpunktDerEintragung>2013-08-06</zeitpunktDerEintragung>
+          <istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1p"/>
+          <grundstueckBestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAaSO"/>
+        </AX_Buchungsstelle>
+      </wfs:member>
+      <wfs:member>
+        <AX_LagebezeichnungMitHausnummer gml:id="DEBYvAAAAAAAAZks">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAZks</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <inversZu_dientZurDarstellungVon_AP_PTO xlink:href="urn:adv:oid:DEBYvAAAAAAAAZd4"/>
+          <lagebezeichnung>
+            <AX_Lagebezeichnung>
+              <unverschluesselt>Schnakenstraße</unverschluesselt>
+            </AX_Lagebezeichnung>
+          </lagebezeichnung>
+          <hausnummer>I7-1</hausnummer>
+          <beziehtSichAuf xlink:href="urn:adv:oid:DEBYvAAAAAAAAZyP"/>
+          <gehoertZu xlink:href="urn:adv:oid:DEBYvAAAAAAAAaSO"/>
+        </AX_LagebezeichnungMitHausnummer>
+      </wfs:member>
+      <wfs:member>
+        <AP_PTO gml:id="DEBYvAAAAAAAAZd4">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAZd4</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DKKM1000</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <inversZu_dientZurDarstellungVon_AP_PTO xlink:href="urn:adv:oid:DEBYvAAAAAAAAZd4"/>
+          <position>
+            <gml:Point gml:id="o02341.id.14531.position.Geom_0" srsName="urn:ogc:def:crs:EPSG::25832" srsDimension="2">
+              <gml:pos>565694.90 5495353.58</gml:pos>
+            </gml:Point>
+          </position>
+          <schriftinhalt>I7-1</schriftinhalt>
+          <fontSperrung>0.0</fontSperrung>
+          <skalierung>1.0</skalierung>
+          <horizontaleAusrichtung>zentrisch</horizontaleAusrichtung>
+          <vertikaleAusrichtung>Mitte</vertikaleAusrichtung>
+          <signaturnummer>4070</signaturnummer>
+          <art>HNR</art>
+          <dientZurDarstellungVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAZks"/>
+          <drehwinkel uom="rad">4.68</drehwinkel>
+        </AP_PTO>
+      </wfs:member>
+      <wfs:member>
+        <AX_Buchungsblatt gml:id="DEBYvAAAAAAAAY1p">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAY1p</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <buchungsblattkennzeichen>0999950000554</buchungsblattkennzeichen>
+          <buchungsblattbezirk>
+            <AX_Buchungsblattbezirk_Schluessel>
+              <land>09</land>
+              <bezirk>9995</bezirk>
+            </AX_Buchungsblattbezirk_Schluessel>
+          </buchungsblattbezirk>
+          <buchungsblattnummerMitBuchstabenerweiterung>554</buchungsblattnummerMitBuchstabenerweiterung>
+          <blattart>1000</blattart>
+          <bestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAYxt"/>
+          <bestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAYyI"/>
+          <bestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAYyG"/>
+          <bestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1T"/>
+          <bestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAY7s"/>
+          <bestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAY8R"/>
+          <bestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAY7w"/>
+          <bestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAY7c"/>
+          <bestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAYzt"/>
+          <bestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAY8l"/>
+          <inversZu_istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAHJZu"/>
+          <inversZu_istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY4o"/>
+        </AX_Buchungsblatt>
+      </wfs:member>
+      <wfs:member>
+        <AX_Gebaeude gml:id="DEBYvAAAAAAAAZyP">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAZyP</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <position>
+            <gml:Polygon gml:id="o31001.id.14228.position.Geom_0" srsName="urn:ogc:def:crs:EPSG::25832" srsDimension="2">
+              <gml:exterior>
+                <gml:LinearRing>
+                  <gml:posList>565693.30 5495359.45 565693.40 5495347.80 565712.52 5495347.96 565712.40 5495353.15 565712.36 5495359.58 565693.30 5495359.45</gml:posList>
+                </gml:LinearRing>
+              </gml:exterior>
+            </gml:Polygon>
+          </position>
+          <gebaeudefunktion>9998</gebaeudefunktion>
+          <zeigtAuf xlink:href="urn:adv:oid:DEBYvAAAAAAAAZks"/>
+        </AX_Gebaeude>
+      </wfs:member>
+      <wfs:member>
+        <AX_Buchungsstelle gml:id="DEBYvAAAAAAAAYyI">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAYyI</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <buchungsart>1100</buchungsart>
+          <laufendeNummer>5</laufendeNummer>
+          <zeitpunktDerEintragung>2013-08-07</zeitpunktDerEintragung>
+          <istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1p"/>
+          <grundstueckBestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAaS6"/>
+        </AX_Buchungsstelle>
+      </wfs:member>
+      <wfs:member>
+        <AX_Buchungsstelle gml:id="DEBYvAAAAAAAAYyG">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAYyG</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <buchungsart>1100</buchungsart>
+          <laufendeNummer>6</laufendeNummer>
+          <zeitpunktDerEintragung>2013-08-07</zeitpunktDerEintragung>
+          <istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1p"/>
+          <grundstueckBestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAaQC"/>
+        </AX_Buchungsstelle>
+      </wfs:member>
+      <wfs:member>
+        <AX_Buchungsstelle gml:id="DEBYvAAAAAAAAY1T">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAY1T</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <buchungsart>2301</buchungsart>
+          <laufendeNummer>50000</laufendeNummer>
+          <anteil>
+            <AX_Anteil>
+              <zaehler>1.0</zaehler>
+              <nenner>3.0</nenner>
+            </AX_Anteil>
+          </anteil>
+          <zeitpunktDerEintragung>2011-05-24</zeitpunktDerEintragung>
+          <istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1p"/>
+          <an xlink:href="urn:adv:oid:DEBYvAAAAAAAAYyi"/>
+        </AX_Buchungsstelle>
+      </wfs:member>
+      <wfs:member>
+        <AX_Buchungsstelle gml:id="DEBYvAAAAAAAAY7s">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAY7s</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <buchungsart>1100</buchungsart>
+          <laufendeNummer>2</laufendeNummer>
+          <zeitpunktDerEintragung>2010-06-17</zeitpunktDerEintragung>
+          <istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1p"/>
+          <grundstueckBestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAaUg"/>
+        </AX_Buchungsstelle>
+      </wfs:member>
+      <wfs:member>
+        <AX_Buchungsstelle gml:id="DEBYvAAAAAAAAY8R">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAY8R</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <buchungsart>1301</buchungsart>
+          <laufendeNummer>7</laufendeNummer>
+          <anteil>
+            <AX_Anteil>
+              <zaehler>1.0</zaehler>
+              <nenner>3.0</nenner>
+            </AX_Anteil>
+          </anteil>
+          <nummerImAufteilungsplan>Wohnung 1</nummerImAufteilungsplan>
+          <zeitpunktDerEintragung>2012-04-11</zeitpunktDerEintragung>
+          <istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1p"/>
+          <an xlink:href="urn:adv:oid:DEBYvAAAAAAAAY8L"/>
+        </AX_Buchungsstelle>
+      </wfs:member>
+      <wfs:member>
+        <AX_Buchungsstelle gml:id="DEBYvAAAAAAAAY7w">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAY7w</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <buchungsart>1501</buchungsart>
+          <laufendeNummer>8</laufendeNummer>
+          <anteil>
+            <AX_Anteil>
+              <zaehler>1.0</zaehler>
+              <nenner>2.0</nenner>
+            </AX_Anteil>
+          </anteil>
+          <zeitpunktDerEintragung>2010-06-17</zeitpunktDerEintragung>
+          <istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1p"/>
+          <an xlink:href="urn:adv:oid:DEBYvAAAAAAAAY7t"/>
+        </AX_Buchungsstelle>
+      </wfs:member>
+      <wfs:member>
+        <AX_Buchungsstelle gml:id="DEBYvAAAAAAAAY7c">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAY7c</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <buchungsart>1502</buchungsart>
+          <laufendeNummer>9</laufendeNummer>
+          <anteil>
+            <AX_Anteil>
+              <zaehler>1.0</zaehler>
+              <nenner>2.0</nenner>
+            </AX_Anteil>
+          </anteil>
+          <zeitpunktDerEintragung>2010-06-17</zeitpunktDerEintragung>
+          <istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1p"/>
+          <an xlink:href="urn:adv:oid:DEBYvAAAAAAAAY7W"/>
+        </AX_Buchungsstelle>
+      </wfs:member>
+      <wfs:member>
+        <AX_Buchungsstelle gml:id="DEBYvAAAAAAAAYzt">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAYzt</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <buchungsart>1100</buchungsart>
+          <laufendeNummer>4</laufendeNummer>
+          <zeitpunktDerEintragung>2010-06-17</zeitpunktDerEintragung>
+          <istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1p"/>
+          <grundstueckBestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAaS9"/>
+        </AX_Buchungsstelle>
+      </wfs:member>
+      <wfs:member>
+        <AX_Buchungsstelle gml:id="DEBYvAAAAAAAAY8l">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAY8l</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <buchungsart>1100</buchungsart>
+          <laufendeNummer>3</laufendeNummer>
+          <zeitpunktDerEintragung>2010-06-17</zeitpunktDerEintragung>
+          <istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1p"/>
+          <grundstueckBestehtAus xlink:href="urn:adv:oid:DEBYvAAAAAAAAaN5"/>
+          <inversZu_an xlink:href="urn:adv:oid:DEBYvAAAAAAAAYyi"/>
+        </AX_Buchungsstelle>
+      </wfs:member>
+      <wfs:member>
+        <AX_Namensnummer gml:id="DEBYvAAAAAAAHJZu">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAHJZu</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <benennt xlink:href="urn:adv:oid:DEBYvAAAC0DbvI4M"/>
+          <laufendeNummerNachDIN1421>2</laufendeNummerNachDIN1421>
+          <istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1p"/>
+        </AX_Namensnummer>
+      </wfs:member>
+      <wfs:member>
+        <AX_Namensnummer gml:id="DEBYvAAAAAAAAY4o">
+          <gml:identifier codeSpace="http://www.adv-online.de/">urn:adv:oid:DEBYvAAAAAAAAY4o</gml:identifier>
+          <lebenszeitintervall>
+            <AA_Lebenszeitintervall>
+              <beginnt>2023-09-11T11:56:49Z</beginnt>
+            </AA_Lebenszeitintervall>
+          </lebenszeitintervall>
+          <modellart>
+            <AA_Modellart>
+              <advStandardModell>DLKM</advStandardModell>
+            </AA_Modellart>
+          </modellart>
+          <benennt xlink:href="urn:adv:oid:DEBYvAAAC0DbvI54"/>
+          <laufendeNummerNachDIN1421>1</laufendeNummerNachDIN1421>
+          <istBestandteilVon xlink:href="urn:adv:oid:DEBYvAAAAAAAAY1p"/>
+        </AX_Namensnummer>
+      </wfs:member>
+    </wfs:SimpleFeatureCollection>
+  </wfs:additionalObjects>
+</wfs:FeatureCollection>
